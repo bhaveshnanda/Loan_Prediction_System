@@ -11,7 +11,6 @@ Original file is located at
 ### In this project, we will predict whether a customer will get the loan from bank or not.
 """
 
-
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -228,12 +227,15 @@ if result==1:
 else:
     print("\n\nLoan Not Approved")
 
-import joblib
+import pickle
 file = 'ML_Model1'
+fileobj = open(file,'wb')
 
-joblib.dump(LR,file)
+pickle.dump(LR,fileobj)
+fileobj.close()
 
-model = joblib.load(file)
+fileobj = open(file,'rb')
+model = pickle.load(fileobj)
 
 import pandas as pd
 df = pd.DataFrame({
@@ -259,16 +261,3 @@ if result==1:
 else:
     print("\n\nLoan Not Approved")
 
-''' import pickle
-from sklearn.svm import SVC
-# now you can save it to a file
-file = '/content/drive/MyDrive/Bhavesh_Project/Model/ML_Model1.pkl'
-with open(file, 'wb') as f:
-  pickle.dump(SVC, f) '''
-
-''' with open(file, 'rb') as f:
-    k = pickle.load(f) '''
-
-''' cy = k.predict([[0.0,	0.0,	0.0,	1,	0.0,	4230,	0.0,	112.0,	360.0,	1.0,	1]])
-
-print(cy) '''

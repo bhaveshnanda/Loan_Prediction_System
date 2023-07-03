@@ -1,10 +1,10 @@
 import streamlit as st
 from PIL import Image
-import joblib
-
+import pickle
 file = 'C:/Users/ej190/Desktop/pred_Model/ML_Model1'
 
-model = joblib.load(file)
+fileobj = open(file,'rb')
+model = pickle.load(fileobj)
 #print(data)
 3
 def run():
