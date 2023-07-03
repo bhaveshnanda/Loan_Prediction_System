@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-
+import joblibs
 
 file = 'C:/Users/ej190/Desktop/pred_Model/ML_Model1'
 
