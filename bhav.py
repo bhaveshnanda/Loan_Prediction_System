@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+pip install joblib
 import joblib
 
 file = 'C:/Users/ej190/Desktop/pred_Model/ML_Model1'
