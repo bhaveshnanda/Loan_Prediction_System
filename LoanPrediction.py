@@ -5,8 +5,8 @@ file = 'ML_Model1'
 
 fileobj = open(file,'rb')
 model = pickle.load(fileobj)
-#print(data)
-3
+
+
 def run():
     img1 = Image.open('HDFC_logo.png')
     img1 = img1.resize((150,170))
