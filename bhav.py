@@ -1,14 +1,14 @@
 import streamlit as st
 from PIL import Image
 import pickle
-file = 'C:/Users/ej190/Desktop/pred_Model/ML_Model1'
+file = 'ML_Model1'
 
 fileobj = open(file,'rb')
 model = pickle.load(fileobj)
 #print(data)
 3
 def run():
-    img1 = Image.open('C:/Users/ej190/Downloads/HDFC_logo.png')
+    img1 = Image.open('HDFC_logo.png')
     img1 = img1.resize((160,190))
     st.image(img1,use_column_width=False)
     st.title("Bank Loan Prediction using Machine Learning")
