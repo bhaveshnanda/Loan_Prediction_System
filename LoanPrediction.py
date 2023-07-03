@@ -9,7 +9,7 @@ model = pickle.load(fileobj)
 3
 def run():
     img1 = Image.open('HDFC_logo.png')
-    img1 = img1.resize((160,190))
+    img1 = img1.resize((150,170))
     st.image(img1,use_column_width=False)
     st.title("Bank Loan Prediction using Machine Learning")
 
