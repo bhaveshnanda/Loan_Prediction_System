@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image
 import joblib
 
-
 file = 'C:/Users/ej190/Desktop/pred_Model/ML_Model1'
 
 model = joblib.load(file)
