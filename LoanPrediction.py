@@ -7,11 +7,29 @@ fileobj = open(file,'rb')
 model = pickle.load(fileobj)
 
 
+
 def run():
     img1 = Image.open('HDFC_logo.png')
-    img1 = img1.resize((150,170))
-    st.image(img1,use_column_width=False)
-    st.title("Bank Loan Prediction using Machine Learning")
+    #img1 = img1.resize((160,160))
+    col1, col2, col3, col4, col5 = st.columns(5)
+
+    with col1:
+        st.write(' ')
+
+    with col2:
+        st.write('')
+
+    with col3:
+        st.image(img1,use_column_width=True)
+
+    with col4:
+        st.write(' ')
+
+    with col5:
+        st.write(' ')
+
+    #st.image(img1, use_column_width=False)
+    st.markdown("<h1 style='text-align: center;'>Loan Prediction System</h1>", unsafe_allow_html=True)
 
     ## Full Name
     fn = st.text_input('Full Name')
@@ -65,6 +83,8 @@ def run():
     dur_options = range(len(dur_display))
     dur = st.selectbox("Loan Duration",dur_options, format_func=lambda x: dur_display[x])
 
+
+
     if st.button("Submit"):
         duration = 0
         if dur == 0:
@@ -84,13 +104,14 @@ def run():
         ans = int("".join(lc))
         if ans == 0:
             st.error(
-                "Hello: " + fn +" || "
-                'According to our Calculations, you will not get the loan from Bank'
+                "Hello: " + fn + " || "
+                                 'According to our Calculations, you will not get the loan from Bank'
             )
         else:
             st.success(
-                "Hello: " + fn +" || "
-                'Congratulations!! you will get the loan from Bank'
+                "Hello: " + fn + " || "
+                                 'Congratulations!! you will get the loan from Bank'
             )
+
 
 run()
