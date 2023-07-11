@@ -32,10 +32,10 @@ def predict():
         prediction = model.predict(feature)
 
         if prediction==1:
-            return render_template("prediction.html", prediction_text="Congratulations!! you are eligible for loan", prediction_color = "green")
+            return render_template("prediction.html", prediction_text="Congratulations!! you will get the loan from Bank", prediction_color = "green")
         
         if prediction==0:
-            return render_template("prediction.html", prediction_text="Sorry, According to our Calculations, you will not get the loan", prediction_color = "red")
+            return render_template("prediction.html", prediction_text="Sorry, According to our Calculations, you will not get the loan from Bank", prediction_color = "red")
 
 
 
@@ -45,4 +45,5 @@ def predict():
 
 
 predict
-app.run(host='0.0.0.0',port=8080, debug =True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug =True)
